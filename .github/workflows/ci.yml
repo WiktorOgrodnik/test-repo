@@ -1,0 +1,20 @@
+name: "General CI checks"
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-in-renode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run scripts in Renode
+        uses: antmicro-labs/renode-linux-runner-action@disable-multicore-emulation
+        with:
+          shared-dir: ./
+          image: https://github.com/antmicro-labs/renode-linux-runner-action/releases/download/latest/images.tar.xz
+          renode-run: |
+            ls /dev | grep video
+          devices: vivid
