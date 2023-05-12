@@ -13,7 +13,6 @@ jobs:
       - name: Run scripts in Renode
         uses: antmicro/renode-linux-runner-action@main
         with:
-          shared-dir: ./
           renode-run: |
             ls /dev | grep video
           devices: vivid
