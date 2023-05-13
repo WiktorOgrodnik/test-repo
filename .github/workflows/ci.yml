@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run scripts in Renode
-        uses: antmicro/renode-linux-runner-action@main
+        uses: antmicro-labs/renode-linux-runner-action@v0-next-fix
         with:
           shared-dirs: .
           renode-run: |
