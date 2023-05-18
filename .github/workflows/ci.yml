@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run scripts in Renode
-        uses: antmicro-labs/renode-linux-runner-action@images-refactoring
+        uses: antmicro-labs/renode-linux-runner-action@add-dockersave
         with:
           shared-dirs: ./
           renode-run: |
